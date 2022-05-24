@@ -34,6 +34,10 @@ export class PostResolver {
     @Arg("newPost") newPost: string
   ) {
     if (ctx && ctx.authenticatedUserEmail) {
+      const postToEdit = posts.find((post) => editPostByIdId === post.id);
+      if (postToEdit?.author !== ctx.authenticatedUserEmail) {
+        return new ApolloError("Not Authorized");
+      }
       posts = posts.map((post) => {
         if (post.id === editPostByIdId) {
           return { ...post, message: newPost };
