@@ -1,9 +1,9 @@
 import { ObjectType, Field } from "type-graphql";
 
 @ObjectType()
-export class Book {
+export class Post {
   @Field()
-  title: string;
+  message: string;
 
   @Field()
   author: string;

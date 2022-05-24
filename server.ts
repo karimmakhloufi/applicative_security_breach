@@ -2,7 +2,7 @@ import "reflect-metadata";
 import { ApolloServer } from "apollo-server";
 import { buildSchema } from "type-graphql";
 import jwt, { JwtPayload } from "jsonwebtoken";
-import { BookResolver } from "./src/Resolvers/Book";
+import { PostResolver } from "./src/Resolvers/Post";
 import { LoginResolver } from "./src/Resolvers/Login";
 
 export const jwtKey = "my_secret_key_that_must_be_very_long";
@@ -10,7 +10,7 @@ export const jwtKey = "my_secret_key_that_must_be_very_long";
 async function bootstrap() {
   // build TypeGraphQL executable schema
   const schema = await buildSchema({
-    resolvers: [BookResolver, LoginResolver],
+    resolvers: [PostResolver, LoginResolver],
   });
 
   // Create GraphQL server

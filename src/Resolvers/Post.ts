@@ -1,26 +1,26 @@
 import { ApolloError } from "apollo-server";
 import { JwtPayload } from "jsonwebtoken";
 import { Resolver, Query, Ctx } from "type-graphql";
-import { Book } from "../Entities/Book";
+import { Post } from "../Entities/Post";
 
-const books = [
+const posts: Post[] = [
   {
-    title: "The Awakening",
+    message: "The Awakening",
     author: "Kate Chopin",
   },
   {
-    title: "City of Glass",
+    message: "City of Glass",
     author: "Paul Auster",
   },
 ];
 
-@Resolver(() => Book)
-export class BookResolver {
-  @Query(() => [Book])
-  async books(@Ctx() ctx: JwtPayload) {
+@Resolver(() => Post)
+export class PostResolver {
+  @Query(() => [Post])
+  async posts(@Ctx() ctx: JwtPayload) {
     console.log(ctx);
     if (ctx && ctx.authenticatedUserEmail) {
-      return books;
+      return posts;
     } else {
       return new ApolloError("Not Authorized");
     }
