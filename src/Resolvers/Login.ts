@@ -6,8 +6,12 @@ import { jwtKey } from "../../server";
 
 const usersDB = [
   {
-    email: "admin@gmail.com",
-    hash: bcrypt.hashSync("p4ssw0rd", 10),
+    email: "alice@gmail.com",
+    hash: bcrypt.hashSync("p4ssw0rdalice", 10),
+  },
+  {
+    email: "bob@gmail.com",
+    hash: bcrypt.hashSync("p4ssw0rdbob", 10),
   },
 ];
 

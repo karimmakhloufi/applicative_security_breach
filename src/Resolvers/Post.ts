@@ -5,12 +5,12 @@ import { Post } from "../Entities/Post";
 
 const posts: Post[] = [
   {
-    message: "The Awakening",
-    author: "Kate Chopin",
+    message: "Vends clio 3 2.2 L 135 000 km 2.500 € à débattre",
+    author: "alice@gmail.com",
   },
   {
-    message: "City of Glass",
-    author: "Paul Auster",
+    message: "Interréssé par la clio, contactez moi au 07.12.34.56.78",
+    author: "bob@gmail.com",
   },
 ];
 
